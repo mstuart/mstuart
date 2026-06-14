@@ -21,6 +21,9 @@
 - 🎓 **[graphql-workshop](https://github.com/mstuart/graphql-workshop)** — Hands-on GraphQL training workshop (2018).
 - 🎤 **[xoom-graphql-workshop](https://github.com/mstuart/xoom-graphql-workshop)** — Hands-on GraphQL training workshop (2019).
 
+<!-- AUTO:graphql:start -->
+<!-- AUTO:graphql:end -->
+
 </details>
 
 <details open>
@@ -33,6 +36,9 @@
 - 🔍 **[mcp-tool-lint](https://github.com/mstuart/mcp-tool-lint)** — Static linter that catches MCP tool-definition defects before they ship.
 - 🍼 **[pr-babysitter](https://github.com/mstuart/pr-babysitter)** — Auto-fixes merge conflicts, failing CI, and review comments with Claude Code.
 
+<!-- AUTO:ai:start -->
+<!-- AUTO:ai:end -->
+
 </details>
 
 <details open>
@@ -43,6 +49,9 @@
 - 📋 **[problem-response](https://github.com/mstuart/problem-response)** — RFC 9457 Problem Details error responses — framework-agnostic and TypeScript-first.
 - 🔖 **[versionkit](https://github.com/mstuart/versionkit)** — API versioning with RFC-compliant Sunset and Deprecation headers.
 - ⏱️ **[api-perf-budget](https://github.com/mstuart/api-perf-budget)** — Define and enforce per-route latency budgets in CI.
+
+<!-- AUTO:http:start -->
+<!-- AUTO:http:end -->
 
 </details>
 
@@ -60,6 +69,9 @@
 - 🔎 **[is-runtime](https://github.com/mstuart/is-runtime)** — Detect which JavaScript runtime you're executing in.
 - 🔐 **[has-permission](https://github.com/mstuart/has-permission)** — Check and assert Node.js Permission Model grants at runtime.
 
+<!-- AUTO:async:start -->
+<!-- AUTO:async:end -->
+
 </details>
 
 <details open>
@@ -71,6 +83,9 @@
 - 📈 **[perf-fn](https://github.com/mstuart/perf-fn)** — Time sync and async functions with the Performance API.
 - 🗑️ **[weakref-store](https://github.com/mstuart/weakref-store)** — A WeakRef cache that evicts entries as values get garbage-collected.
 - 🧰 **[portacache](https://github.com/mstuart/portacache)** — Portable key-value cache that auto-picks the best available backend.
+
+<!-- AUTO:perf:start -->
+<!-- AUTO:perf:end -->
 
 </details>
 
@@ -86,6 +101,9 @@
 - 🏷️ **[error-with-cause](https://github.com/mstuart/error-with-cause)** — Typed error classes with codes, cause chains, and type guards.
 - 🌊 **[stream-to-value](https://github.com/mstuart/stream-to-value)** — Drain a Web ReadableStream into a string, bytes, JSON, or array.
 - 🚿 **[web-stream-transform](https://github.com/mstuart/web-stream-transform)** — Functional map, filter, take, batch, and tap for Web Streams.
+
+<!-- AUTO:data:start -->
+<!-- AUTO:data:end -->
 
 </details>
 

@@ -1,18 +1,39 @@
-// Keeps the "🆕 Recently Published" block in README.md in sync with GitHub.
+// Keeps the auto-managed repo blocks in README.md in sync with GitHub.
 //
-// It lists every public, non-fork, non-archived repo that is NOT already linked
-// in one of the hand-curated sections above the marker. Curated sections are
-// never touched. Run `DRY=1 node scripts/update-readme.mjs` to preview.
+// Every public, non-fork, non-archived repo that is NOT already linked in a
+// hand-curated section gets routed by its name prefix into the matching themed
+// section (flagged 🆕 so you can write a real summary and merge it up into the
+// curated list). Anything that matches no prefix lands in the catch-all
+// "Recently Published" block. Curated lines are never touched.
+//
+// Run `DRY=1 node scripts/update-readme.mjs` to preview routing without writing.
 
 import { readFile, writeFile } from 'node:fs/promises';
 
 const USER = 'mstuart';
 const README = new URL('../README.md', import.meta.url);
-const START = '<!-- AUTO:recent:start -->';
-const END = '<!-- AUTO:recent:end -->';
+
+// Prefix → section routing. A fresh repo whose name starts with one of a
+// section's prefixes is appended to that section's in-README auto-block.
+// First match wins, so keep prefixes section-distinct. Edit freely.
+const SECTIONS = [
+  { key: 'graphql', prefixes: ['graphql-', 'xoom-graphql-'] },
+  { key: 'ai', prefixes: ['mcp-', 'ai-', 'agent-', 'llm-'] },
+  { key: 'http', prefixes: ['openapi-', 'api-', 'http-', 'fetch-', 'rest-'] },
+  { key: 'async', prefixes: ['abort-', 'signal-', 'disposable-', 'using-', 'async-', 'context-', 'offload-'] },
+  { key: 'perf', prefixes: ['perf-', 'mem-', 'memcheck', 'weakref', 'cache', 'portacache'] },
+  { key: 'data', prefixes: ['error-', 'map-', 'set-', 'iterable-', 'stream-', 'deep-diff', 'schema-'] },
+];
+// Repos matching no section prefix land here, rendered as their own section.
+const CATCHALL = 'recent';
+
+const markers = (key) => ({
+  start: `<!-- AUTO:${key}:start -->`,
+  end: `<!-- AUTO:${key}:end -->`,
+});
 
 // Repos to never surface: the profile repo itself + intentionally-omitted stubs.
-// Add a name here to keep a new repo out of the auto block.
+// Add a name here to keep a new repo out of every block.
 const IGNORE = new Set([USER, 'common-schema', 'stitching']);
 
 const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
@@ -39,46 +60,89 @@ async function fetchAllRepos() {
 }
 
 const readme = await readFile(README, 'utf8');
-const startIdx = readme.indexOf(START);
-const endIdx = readme.indexOf(END);
-if (startIdx === -1 || endIdx === -1) {
-  throw new Error(`Missing ${START} / ${END} markers in README.md`);
-}
 
-// Names already linked OUTSIDE the auto block (i.e. in the curated sections).
-const curated = readme.slice(0, startIdx) + readme.slice(endIdx + END.length);
-const listed = new Set(
+// Locate every auto-block region; bail loudly if a marker pair is missing.
+const allKeys = [...SECTIONS.map((s) => s.key), CATCHALL];
+const regions = allKeys
+  .map((key) => {
+    const { start, end } = markers(key);
+    const s = readme.indexOf(start);
+    const e = readme.indexOf(end);
+    if (s === -1 || e === -1) throw new Error(`Missing ${start} / ${end} in README.md`);
+    return { key, s, e: e + end.length };
+  })
+  .sort((a, b) => a.s - b.s);
+
+// "Filed" = repos linked anywhere OUTSIDE every auto-block (the curated lines).
+// Names inside a block don't count, so a routed repo persists until you move it
+// up into the curated list — at which point it drops out of the block.
+let curated = '';
+let cursor = 0;
+for (const r of regions) {
+  curated += readme.slice(cursor, r.s);
+  cursor = r.e;
+}
+curated += readme.slice(cursor);
+const filed = new Set(
   [...curated.matchAll(/github\.com\/mstuart\/([A-Za-z0-9._-]+)/g)].map((m) => m[1]),
 );
 
 const repos = await fetchAllRepos();
-const fresh = repos
-  .filter((r) => !r.fork && !r.archived && !r.private)
+const originals = repos.filter((r) => !r.fork && !r.archived && !r.private);
+const fresh = originals
   .filter((r) => !IGNORE.has(r.name))
-  .filter((r) => !listed.has(r.name))
+  .filter((r) => !filed.has(r.name))
   .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
-const items = fresh
-  .map((r) => `- **[${r.name}](${r.html_url})** — ${(r.description || 'No description yet.').trim()}`)
-  .join('\n');
+// Route each fresh repo to a section key (first prefix match) or the catch-all.
+const routeOf = (name) => {
+  for (const s of SECTIONS) {
+    if (s.prefixes.some((p) => name.startsWith(p))) return s.key;
+  }
+  return CATCHALL;
+};
+const routed = new Map(allKeys.map((k) => [k, []]));
+for (const r of fresh) routed.get(routeOf(r.name)).push(r);
 
-const block = fresh.length
-  ? `${START}\n\n<details open>\n<summary><h2>🆕 Recently Published</h2></summary>\n\n> Newest public repos, not yet filed into a section above.\n\n${items}\n\n</details>\n\n${END}`
-  : `${START}\n${END}`;
+const line = (r, flag) =>
+  `- ${flag}**[${r.name}](${r.html_url})** — ${(r.description || 'No description yet.').trim()}`;
 
-const updated = readme.slice(0, startIdx) + block + readme.slice(endIdx + END.length);
+function renderRegion(key) {
+  const { start, end } = markers(key);
+  const list = routed.get(key);
+  if (!list.length) return `${start}\n${end}`; // invisible when empty
+  if (key === CATCHALL) {
+    const items = list.map((r) => line(r, '')).join('\n');
+    return `${start}\n\n<details open>\n<summary><h2>🆕 Recently Published</h2></summary>\n\n> Newest public repos that didn't match a section's naming prefix — move them into a section above.\n\n${items}\n\n</details>\n\n${end}`;
+  }
+  // In-section block: bare 🆕-flagged bullets appended under the curated list.
+  const items = list.map((r) => line(r, '🆕 ')).join('\n');
+  return `${start}\n${items}\n${end}`;
+}
+
+// Rebuild the README, swapping each region for its freshly-rendered content.
+let out = '';
+cursor = 0;
+for (const r of regions) {
+  out += readme.slice(cursor, r.s) + renderRegion(r.key);
+  cursor = r.e;
+}
+out += readme.slice(cursor);
 
 console.log(
-  `considered: ${repos.filter((r) => !r.fork && !r.archived && !r.private).length} public originals · ` +
-    `filed: ${listed.size} · ignored: ${IGNORE.size} · new: ${fresh.length}`,
+  `considered: ${originals.length} public originals · filed: ${filed.size} · ignored: ${IGNORE.size} · new: ${fresh.length}`,
 );
-if (fresh.length) console.log('new:\n' + items);
+console.log('routing → ' + allKeys.map((k) => `${k}:${routed.get(k).length}`).join('  '));
+if (fresh.length) {
+  console.log('new:');
+  for (const r of fresh) console.log(`  ${routeOf(r.name).padEnd(8)} ← ${r.name}`);
+}
 
 if (DRY) {
   console.log('\n[DRY] no changes written.');
-} else if (updated !== readme) {
-  await writeFile(README, updated);
-  console.log(`\nUpdated README.md (${fresh.length} repo(s) in the recently-published block).`);
+} else if (out !== readme) {
+  await writeFile(README, out);
+  console.log('\nUpdated README.md.');
 } else {
   console.log('\nNo changes.');
 }
