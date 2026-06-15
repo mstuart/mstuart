@@ -1,6 +1,6 @@
 # Mark Stuart
 
-🤖 AI agents · ⚙️ Node.js libraries · 🔷 GraphQL
+🤖 AI tooling · ⚙️ Node.js libraries · 🔷 GraphQL
 
 [![GitHub followers](https://img.shields.io/github/followers/mstuart?style=flat&logo=github&label=Follow)](https://github.com/mstuart?tab=followers)
 
