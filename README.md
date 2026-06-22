@@ -108,6 +108,16 @@
 </details>
 
 <!-- AUTO:recent:start -->
+
+<details open>
+<summary><h2>🆕 Recently Published</h2></summary>
+
+> Newest public repos that didn't match a section's naming prefix — move them into a section above.
+
+- **[tare](https://github.com/mstuart/tare)** — Lossless-by-default context compression for LLM coding agents — proxy, library, CLI, and MCP server. Local-first, cache-correct, reversible.
+
+</details>
+
 <!-- AUTO:recent:end -->
 
 ---
