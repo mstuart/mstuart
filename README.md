@@ -29,6 +29,7 @@
 <details open>
 <summary><h2>🤖 AI & Agent Tooling</h2></summary>
 
+- 🗜️ **[tare](https://github.com/mstuart/tare)** — Lossless-by-default context compression for LLM coding agents — proxy, CLI, and MCP server.
 - 📟 **[ai-statusline](https://github.com/mstuart/ai-statusline)** — Real-time model, token, cost, and git status line for AI coding assistants.
 - 🧠 **[code-memory](https://github.com/mstuart/code-memory)** — Persistent memory for AI coding — semantic search, git history, context that survives.
 - ✂️ **[mcp-prune](https://github.com/mstuart/mcp-prune)** — Audit MCP server usage from Claude Code transcripts and prune the idle ones.
