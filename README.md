@@ -7,6 +7,22 @@
 ---
 
 <details open>
+<summary><h2>🤖 AI & Agent Tooling</h2></summary>
+
+- 🗜️ **[tare](https://github.com/mstuart/tare)** — Lossless-by-default context compression for LLM coding agents — proxy, CLI, and MCP server.
+- 📟 **[ai-statusline](https://github.com/mstuart/ai-statusline)** — Real-time model, token, cost, and git status line for AI coding assistants.
+- 🧠 **[code-memory](https://github.com/mstuart/code-memory)** — Persistent memory for AI coding — semantic search, git history, context that survives.
+- ✂️ **[mcp-prune](https://github.com/mstuart/mcp-prune)** — Audit MCP server usage from Claude Code transcripts and prune the idle ones.
+- ⏪ **[mcp-replay](https://github.com/mstuart/mcp-replay)** — Record and replay MCP interactions for deterministic CI — nock/msw for MCP.
+- 🔍 **[mcp-tool-lint](https://github.com/mstuart/mcp-tool-lint)** — Static linter that catches MCP tool-definition defects before they ship.
+- 🍼 **[pr-babysitter](https://github.com/mstuart/pr-babysitter)** — Auto-fixes merge conflicts, failing CI, and review comments with Claude Code.
+
+<!-- AUTO:ai:start -->
+<!-- AUTO:ai:end -->
+
+</details>
+
+<details open>
 <summary><h2>🔷 GraphQL</h2></summary>
 
 - 🔌 **[graphql-agent-toolkit](https://github.com/mstuart/graphql-agent-toolkit)** — Turn any GraphQL API into AI-agent-ready tools — MCP servers, LangChain tools, and SDKs.
@@ -23,22 +39,6 @@
 
 <!-- AUTO:graphql:start -->
 <!-- AUTO:graphql:end -->
-
-</details>
-
-<details open>
-<summary><h2>🤖 AI & Agent Tooling</h2></summary>
-
-- 🗜️ **[tare](https://github.com/mstuart/tare)** — Lossless-by-default context compression for LLM coding agents — proxy, CLI, and MCP server.
-- 📟 **[ai-statusline](https://github.com/mstuart/ai-statusline)** — Real-time model, token, cost, and git status line for AI coding assistants.
-- 🧠 **[code-memory](https://github.com/mstuart/code-memory)** — Persistent memory for AI coding — semantic search, git history, context that survives.
-- ✂️ **[mcp-prune](https://github.com/mstuart/mcp-prune)** — Audit MCP server usage from Claude Code transcripts and prune the idle ones.
-- ⏪ **[mcp-replay](https://github.com/mstuart/mcp-replay)** — Record and replay MCP interactions for deterministic CI — nock/msw for MCP.
-- 🔍 **[mcp-tool-lint](https://github.com/mstuart/mcp-tool-lint)** — Static linter that catches MCP tool-definition defects before they ship.
-- 🍼 **[pr-babysitter](https://github.com/mstuart/pr-babysitter)** — Auto-fixes merge conflicts, failing CI, and review comments with Claude Code.
-
-<!-- AUTO:ai:start -->
-<!-- AUTO:ai:end -->
 
 </details>
 
