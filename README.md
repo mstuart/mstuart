@@ -16,6 +16,7 @@
 - ⏪ **[mcp-replay](https://github.com/mstuart/mcp-replay)** — Record and replay MCP interactions for deterministic CI — nock/msw for MCP.
 - 🔍 **[mcp-tool-lint](https://github.com/mstuart/mcp-tool-lint)** — Static linter that catches MCP tool-definition defects before they ship.
 - 🍼 **[pr-babysitter](https://github.com/mstuart/pr-babysitter)** — Auto-fixes merge conflicts, failing CI, and review comments with Claude Code.
+- 🩺 **[vitals](https://github.com/mstuart/vitals)** — Local-first Fitbit and Google Health archive with baseline-deviation alerts — CLI and MCP server.
 
 <!-- AUTO:ai:start -->
 <!-- AUTO:ai:end -->
