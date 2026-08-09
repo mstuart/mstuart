@@ -15,6 +15,7 @@
 - ✂️ **[mcp-prune](https://github.com/mstuart/mcp-prune)** — Audit MCP server usage from Claude Code transcripts and prune the idle ones.
 - ⏪ **[mcp-replay](https://github.com/mstuart/mcp-replay)** — Record and replay MCP interactions for deterministic CI — nock/msw for MCP.
 - 🔍 **[mcp-tool-lint](https://github.com/mstuart/mcp-tool-lint)** — Static linter that catches MCP tool-definition defects before they ship.
+- 👁️ **[peek](https://github.com/mstuart/peek)** — DevTools for coding agents — session composition, cost attribution, and config A/B benchmarking across Claude Code, Codex, and pi.
 - 🍼 **[pr-babysitter](https://github.com/mstuart/pr-babysitter)** — Auto-fixes merge conflicts, failing CI, and review comments with Claude Code.
 - 🩺 **[vitals](https://github.com/mstuart/vitals)** — Local-first Fitbit and Google Health archive with baseline-deviation alerts — CLI and MCP server.
 
