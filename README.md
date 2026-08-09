@@ -17,6 +17,8 @@
 - 🔍 **[mcp-tool-lint](https://github.com/mstuart/mcp-tool-lint)** — Static linter that catches MCP tool-definition defects before they ship.
 - 👁️ **[peek](https://github.com/mstuart/peek)** — DevTools for coding agents — session composition, cost attribution, and config A/B benchmarking across Claude Code, Codex, and pi.
 - 🍼 **[pr-babysitter](https://github.com/mstuart/pr-babysitter)** — Auto-fixes merge conflicts, failing CI, and review comments with Claude Code.
+- 🐍 **[pypi-axi](https://github.com/mstuart/pypi-axi)** — Inspect PyPI packages, versions, dependencies, and downloads with token-efficient TOON output — an [AXI](https://github.com/kunchenguid/axi) for agents.
+- 🍺 **[homebrew-axi](https://github.com/mstuart/homebrew-axi)** — Inspect Homebrew formulae, casks, and installed packages with token-efficient TOON output — an [AXI](https://github.com/kunchenguid/axi) for agents.
 - 🩺 **[vitals](https://github.com/mstuart/vitals)** — Local-first Fitbit and Google Health archive with baseline-deviation alerts — CLI and MCP server.
 
 <!-- AUTO:ai:start -->
