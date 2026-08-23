@@ -6,20 +6,28 @@
 
 ---
 
+## Flagship projects
+
+| Project | What it does |
+| --- | --- |
+| **[tare](https://github.com/mstuart/tare)** | Lossless-by-default context compression for LLM coding agents — proxy, library, CLI, and MCP server. |
+| **[peek](https://github.com/mstuart/peek)** | DevTools for coding agents — session composition, cost attribution, compaction forensics, and config A/B benchmarking across Claude Code, Codex, and pi. |
+| **[vitals](https://github.com/mstuart/vitals)** | Local-first archive and baseline-deviation detector for Google Health API v4 data from Fitbit and Pixel Watch. |
+| **[mcp-prune](https://github.com/mstuart/mcp-prune)** | Audits MCP server usage from Claude Code transcripts to find idle servers to prune. |
+| **[ai-statusline](https://github.com/mstuart/ai-statusline)** | Customizable status line for AI coding assistants with real-time model, token, cost, and git status. |
+| **[graphql-agent-toolkit](https://github.com/mstuart/graphql-agent-toolkit)** | Turns any GraphQL API into AI-agent-ready tools — MCP servers, LangChain tools, and standalone SDKs. |
+
+---
+
 <details open>
 <summary><h2>🤖 AI & Agent Tooling</h2></summary>
 
-- 🗜️ **[tare](https://github.com/mstuart/tare)** — Lossless-by-default context compression for LLM coding agents — proxy, CLI, and MCP server.
-- 📟 **[ai-statusline](https://github.com/mstuart/ai-statusline)** — Real-time model, token, cost, and git status line for AI coding assistants.
 - 🧠 **[code-memory](https://github.com/mstuart/code-memory)** — Persistent memory for AI coding — semantic search, git history, context that survives.
-- ✂️ **[mcp-prune](https://github.com/mstuart/mcp-prune)** — Audit MCP server usage from Claude Code transcripts and prune the idle ones.
 - ⏪ **[mcp-replay](https://github.com/mstuart/mcp-replay)** — Record and replay MCP interactions for deterministic CI — nock/msw for MCP.
 - 🔍 **[mcp-tool-lint](https://github.com/mstuart/mcp-tool-lint)** — Static linter that catches MCP tool-definition defects before they ship.
-- 👁️ **[peek](https://github.com/mstuart/peek)** — DevTools for coding agents — session composition, cost attribution, and config A/B benchmarking across Claude Code, Codex, and pi.
 - 🍼 **[pr-babysitter](https://github.com/mstuart/pr-babysitter)** — Auto-fixes merge conflicts, failing CI, and review comments with Claude Code.
 - 🐍 **[pypi-axi](https://github.com/mstuart/pypi-axi)** — Inspect PyPI packages, versions, dependencies, and downloads with token-efficient TOON output — an [AXI](https://github.com/kunchenguid/axi) for agents.
 - 🍺 **[homebrew-axi](https://github.com/mstuart/homebrew-axi)** — Inspect Homebrew formulae, casks, and installed packages with token-efficient TOON output — an [AXI](https://github.com/kunchenguid/axi) for agents.
-- 🩺 **[vitals](https://github.com/mstuart/vitals)** — Local-first Fitbit and Google Health archive with baseline-deviation alerts — CLI and MCP server.
 
 <!-- AUTO:ai:start -->
 <!-- AUTO:ai:end -->
@@ -29,7 +37,6 @@
 <details open>
 <summary><h2>🔷 GraphQL</h2></summary>
 
-- 🔌 **[graphql-agent-toolkit](https://github.com/mstuart/graphql-agent-toolkit)** — Turn any GraphQL API into AI-agent-ready tools — MCP servers, LangChain tools, and SDKs.
 - 🤝 **[graphql-contract](https://github.com/mstuart/graphql-contract)** — Consumer-driven contract testing for GraphQL — no Pact Broker required.
 - 💰 **[graphql-cost-guardian](https://github.com/mstuart/graphql-cost-guardian)** — Score and cap GraphQL query cost with configurable per-field weights.
 - #️⃣ **[graphql-hash](https://github.com/mstuart/graphql-hash)** — Deterministic query hashing for caching and persisted queries.
