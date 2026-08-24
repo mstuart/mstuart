@@ -1,12 +1,23 @@
 # Mark Stuart
 
-🤖 AI tooling · 🔷 GraphQL · 🌐 APIs & Web · 🧰 Developer tooling
+For nearly two decades, I've built APIs, SDKs, and Web platforms for flagship consumer products at PayPal, eBay, and Rocket. I build developer platforms that make complex systems composable.
 
-[![GitHub followers](https://img.shields.io/github/followers/mstuart?style=flat&logo=github&label=Follow)](https://github.com/mstuart?tab=followers)
+More at [markstuart.dev](https://markstuart.dev).
+
+## ⭐ Start here
+
+- 👁️ **[peek](https://github.com/mstuart/peek)** — DevTools for coding agents — session composition, cost attribution, and config A/B benchmarking.
+- 🗜️ **[tare](https://github.com/mstuart/tare)** — Lossless-by-default context compression for LLM coding agents — proxy, CLI, and MCP server.
+- ✂️ **[mcp-prune](https://github.com/mstuart/mcp-prune)** — Audit MCP server usage from Claude Code transcripts and prune the idle ones.
+- 📟 **[ai-statusline](https://github.com/mstuart/ai-statusline)** — Real-time model, token, cost, and git status line for AI coding assistants.
+- 🔌 **[graphql-agent-toolkit](https://github.com/mstuart/graphql-agent-toolkit)** — Turn any GraphQL API into AI-agent-ready tools — MCP servers, LangChain tools, and SDKs.
+- 🛟 **[fetch-resilience](https://github.com/mstuart/fetch-resilience)** — Retry, timeout, circuit breaker, and bulkhead policies for native fetch — edge-safe, zero deps.
+
+Everything else is below. 50+ tools across AI agents, GraphQL, HTTP, async primitives, performance, and data.
 
 ---
 
-<details open>
+<details>
 <summary><h2>🤖 AI & Agent Tooling</h2></summary>
 
 - 🗜️ **[tare](https://github.com/mstuart/tare)** — Lossless-by-default context compression for LLM coding agents — proxy, CLI, and MCP server.
@@ -26,7 +37,7 @@
 
 </details>
 
-<details open>
+<details>
 <summary><h2>🔷 GraphQL</h2></summary>
 
 - 🔌 **[graphql-agent-toolkit](https://github.com/mstuart/graphql-agent-toolkit)** — Turn any GraphQL API into AI-agent-ready tools — MCP servers, LangChain tools, and SDKs.
@@ -46,7 +57,7 @@
 
 </details>
 
-<details open>
+<details>
 <summary><h2>🌐 HTTP & API Tooling</h2></summary>
 
 - 🛟 **[fetch-resilience](https://github.com/mstuart/fetch-resilience)** — Retry, timeout, circuit breaker, and bulkhead policies for native fetch — edge-safe, zero deps.
@@ -60,7 +71,7 @@
 
 </details>
 
-<details open>
+<details>
 <summary><h2>⚙️ Async & Runtime Primitives</h2></summary>
 
 - 🏁 **[abort-race](https://github.com/mstuart/abort-race)** — Race async operations and auto-cancel the losers' AbortSignals.
@@ -79,7 +90,7 @@
 
 </details>
 
-<details open>
+<details>
 <summary><h2>⚡ Performance, Memory & Caching</h2></summary>
 
 - 📦 **[dep-perf-analyzer](https://github.com/mstuart/dep-perf-analyzer)** — Measure the runtime performance cost of your npm dependencies.
@@ -94,7 +105,7 @@
 
 </details>
 
-<details open>
+<details>
 <summary><h2>🧱 Data, Collections & Errors</h2></summary>
 
 - 🔁 **[iterable-ops](https://github.com/mstuart/iterable-ops)** — Lazy map, filter, take, chunk, zip, and flatten for sync and async iterables.
@@ -114,14 +125,3 @@
 
 <!-- AUTO:recent:start -->
 <!-- AUTO:recent:end -->
-
----
-
-<details>
-<summary><h2>📊 Stats</h2></summary>
-
-[![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mstuart&layout=compact&theme=transparent&hide_border=true)](https://github.com/mstuart)
-
-![Contribution graph](https://ghchart.rshah.org/mstuart)
-
-</details>
