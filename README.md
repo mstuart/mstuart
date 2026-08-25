@@ -124,4 +124,14 @@ Everything else is below. 50+ tools across AI agents, GraphQL, HTTP, async primi
 </details>
 
 <!-- AUTO:recent:start -->
+
+<details open>
+<summary><h2>🆕 Recently Published</h2></summary>
+
+> Newest public repos that didn't match a section's naming prefix — move them into a section above.
+
+- **[markstuart.dev](https://github.com/mstuart/markstuart.dev)** — Source for Mark Stuart’s personal website, built with Next.js and TypeScript.
+
+</details>
+
 <!-- AUTO:recent:end -->
