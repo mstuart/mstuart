@@ -21,7 +21,7 @@ const SECTIONS = [
   { key: 'ai', prefixes: ['mcp-', 'ai-', 'agent-', 'llm-'] },
   { key: 'http', prefixes: ['openapi-', 'api-', 'http-', 'fetch-', 'rest-'] },
   { key: 'async', prefixes: ['abort-', 'signal-', 'disposable-', 'using-', 'async-', 'context-', 'offload-'] },
-  { key: 'perf', prefixes: ['perf-', 'mem-', 'memcheck', 'weakref', 'cache', 'portacache'] },
+  { key: 'perf', prefixes: ['perf-', 'dep-', 'mem-', 'memcheck', 'weakref', 'cache', 'portacache'] },
   { key: 'data', prefixes: ['error-', 'map-', 'set-', 'iterable-', 'stream-', 'deep-diff', 'schema-'] },
 ];
 // Repos matching no section prefix land here, rendered as their own section.
